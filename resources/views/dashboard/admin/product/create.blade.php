@@ -15,12 +15,12 @@
                             <div class="col-lg-6">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Product</h3></div>
-                                    <div class="card-body">
+                                    <div  class="card-body">
                                         <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
                                             @csrf
                                            
                                             <div class="form-floating mb-2">
-                                                <input class="form-control {{ $errors->has('title') ? 'is-invalid':'' }}" id="inputTitle" type="text" name="title" value="{{ old('title') }}" placeholder="Enter title" />
+                                                <input class="form-control overflow-hidden form-control-user {{ $errors->has('title') ? 'is-invalid':'' }}" id="inputTitle" type="text" name="title" value="{{ old('title') }}" placeholder="Enter title" />
                                                 <label for="inputTitle">Title </label>
                                                 @error('title')
                                                     <span class="text-danger mt-2 mb-0" role="alert"> 
