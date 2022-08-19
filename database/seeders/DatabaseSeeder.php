@@ -19,26 +19,26 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        $role_admin = Role::factory()->create([
+        $role_admin = Role::create([
             'title' => 'Admin',
             'slug' => 'admin',
             'status' => 1
         ]);
 
-        $role_user = Role::factory()->create([
+        $role_user = Role::create([
             'title' => 'User',
             'slug' => 'user',
             'status' => 1
         ]);
 
-        $admin = User::factory()->create([
+        $admin = User::create([
             'first_name' => 'Admin',
             'last_name' => 'admin',
             'email' => 'admin@admin.com',
             'password' => '$2y$10$GX/idMoeq7lQqMNlE2rIFebxAYghUvCBNzspmeSGLH1rBM54NyZLm' //password
         ]);
 
-        $user = User::factory()->create([
+        $user = User::create([
             'first_name' => 'User',
             'last_name' => 'user',
             'email' => 'user@user.com',
@@ -49,37 +49,37 @@ class DatabaseSeeder extends Seeder
         $user->roles()->attach($role_user->id);
 
 
-        Category::factory()->create([
+        Category::create([
             'title' => 'Men',
             'parent_id' => null,
             'status' => 1
         ]);
 
-        Category::factory()->create([
+        Category::create([
             'title' => 'Women',
             'parent_id' => null,
             'status' => 1
         ]);
 
-        Category::factory()->create([
+        Category::create([
             'title' => 'Child',
             'parent_id' => null,
             'status' => 1
         ]);
 
-        Category::factory()->create([
+        Category::create([
             'title' => 'Electronic',
             'parent_id' => null,
             'status' => 1
         ]);
 
-        Category::factory()->create([
+        Category::create([
             'title' => 'Fashion',
             'parent_id' => null,
             'status' => 1
         ]);
 
-        Category::factory()->create([
+        Category::create([
             'title' => 'Groceries',
             'parent_id' => null,
             'status' => 1
