@@ -61,7 +61,16 @@ class DatabaseSeeder extends Seeder
             'status' => 1
         ]);
 
+<<<<<<< HEAD
     
+=======
+        Category::create([
+            'title' => 'Child',
+            'parent_id' => null,
+            'status' => 1
+        ]);
+
+>>>>>>> d413c284cd980c172787bc79d651dc995802aec8
         Category::create([
             'title' => 'Electronic',
             'parent_id' => null,
