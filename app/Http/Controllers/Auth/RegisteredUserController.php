@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Role;
 
 class RegisteredUserController extends Controller
 {
@@ -35,7 +36,11 @@ class RegisteredUserController extends Controller
 
     //     event(new Registered($user));
 
+        $admin_role = Role::where('slug', 'admin')->get();
+        $user->roles()->attach($admin_role);
+
         Auth::login($user);
+
         return redirect()->route('admin.dashboard');
     }
 }
