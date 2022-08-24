@@ -10,7 +10,7 @@ class ShopController extends Controller
 {
     public function shop(){
 
-        $products = Product::latest()->get();
+        $products = Product::where('status', 1)->latest()->get();
         $cart = Cart::content();
         return view('shop')->with([ 'products' => $products, 'cart' => $cart ]);
     }
@@ -18,7 +18,7 @@ class ShopController extends Controller
     public function item(Product $product){
 
         $cart = Cart::content();
-        $related_products = Product::where('category_id', $product->category_id)->latest()->limit(5)->get();
+        $related_products = Product::where('status', 1)->where('category_id', $product->category_id)->latest()->limit(5)->get();
         // dd($related_products);
         return view('dashboard.admin.product.show')->with([ 'product' => $product, 'related_products' => $related_products, 'cart' => $cart ]);
     }
