@@ -39,7 +39,9 @@
         <!-- Related items section-->
         <section class="py-5 bg-light">
             <div class="container px-4 px-lg-5 mt-5">
-                <h2 class="fw-bolder mb-4">Related products</h2>
+                @if(count($related_products) > 1)
+                    <h2 class="fw-bolder mb-4">Related products</h2>
+                @endif
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     
                     @foreach($related_products as $r_product)
