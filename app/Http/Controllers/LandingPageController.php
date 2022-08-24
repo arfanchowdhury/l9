@@ -15,7 +15,7 @@ class LandingPageController extends Controller
     public function index()
     {
         $slides = Slide::where('status', 1)->orderBy('serial')->get();
-        $categories = Category::latest()->get();
+        $categories = Category::where('status', 1)->latest()->get();
         return view('index')->with([ 'slides' => $slides, 'categories' => $categories, 'i' => 1]);
     }
 
