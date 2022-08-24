@@ -47,6 +47,7 @@
                                             <td>{{ $product->description }}</td>
                                             <td>{{ $product->price }}</td>
                                             <td>{{ $product->discount == 0 ? 'No Discont': $product->discount }}</td>
+                                            <td>{{ $product->category()->first()->title }}</td>
                                             <td>{{ $product->status ? 'Active':'Inactive'}}</td>
                                             <td>
                                                 <form action="{{ route('products.destroy', $product->id) }}" method="post">
